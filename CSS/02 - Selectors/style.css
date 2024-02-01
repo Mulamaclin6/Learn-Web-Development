@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Universal selector */
 * {
     text-align: center;
@@ -29,4 +30,30 @@ p {
 /* Grouping selector */
 h1, #greenparagraph, .container {
     background-color: burlywood
+=======
+* {
+  color: blue;
+}
+
+p {
+  text-align: center;
+}
+
+#header {
+  background-color: burlywood;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.large {
+  font-size: 30px;
+}
+
+p,
+.nav-link,
+#header {
+  font-weight: bold;
+>>>>>>> a0c9297da3345649b750ea2937cd9b2938dc5234
 }
