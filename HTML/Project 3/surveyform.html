@@ -1,0 +1,88 @@
+<form>
+   
+    <fieldset>
+        <legend> Additional Information.</legend>
+    <label> Full Name: </label>
+    <input type="text" required /><br />
+
+    <label> Age: </label>
+    <input  type="number" min="18" max="35" name="age" /> <br />
+
+    <label> Favourite color:</label>
+    <input type="color" name="Favourite color"/> <br />
+
+    <label> D.O.B:</label>
+    <input type="date" /> <br />
+
+     <label> Upload photo:</label>
+    <input type="file" /> <br />
+
+    <p> Select your gender.</p>
+    <input type="radio" value="male" name="gender" id="male" />
+    <label for="male"> Male</label><br />
+    
+    <input type="radio" value="female" name="gender" id="female" />
+    <label for="female"> Female</label><br />
+    </fieldset>
+
+    <fieldset>
+    <p> How did you know about us.</p>
+    <input type="checkbox" value="ads" id="ads" />
+    <label for="ads"> Ads.</label><br />
+
+    
+    <input type="checkbox" value="magazine" id="magazine" />
+    <label for="magazine"> Facebook.</label><br />
+    
+    <input type="checkbox" value="friend" id="friend"  />
+    <label for="friend"> Friend.</label><br />
+
+    <input type="checkbox" value="social media" id="social media" />
+    <label for="social media">Whatsapp.</label><br />
+
+     <label for="language"> Choose your favourite language.</label>
+     <select id="language">
+         <option value="html">Html</option>
+         <option value="css">CSS</option>
+         <option value="js">JS</option>
+         <option value="java">Java</option>
+         <option value="python"selected>Python</option>
+     </select><br />
+
+     <label> Addition Information:</label>
+     <textarea
+      placeholder="Add some additional comments"
+       rows="10" 
+       cols="30"></textarea>  </textarea><br />
+ </fieldset>
+<fieldset>
+ <label for="browsers"> What is your favourite browser?</label><br />
+ <input list="browsers" />
+ <datalist id="browsers">
+     <option value="Chrome"></option>
+     <option value="Microsoft edge"></option>
+     <option value="Safari"></option>
+     <option value="Firefox"></option>
+     <option value="Phoenix"></option>
+     <option value="Opera"></option>
+ </datalist><br />
+
+ <label for="cars">Choose your favourite car. </label><br />
+ <input list="car" />
+ <datalist id="car">
+ <select id="car" name="car">
+    <option value="Landcruiser">Landcruiser</option>
+    <option value="Audi">Audi</option>
+    <option value="Mercedece benz">Mercedece benz</option>
+    <option value="Premio">Premio</option>
+    <option value="Crown">Crown</option>  
+    <option value="Volvo">Volvo</option>
+    <option value="Saab">Saab</option>
+    <option value="Fiat">Fiat</option>
+</select>
+</datalist>
+<br />
+</fieldset>
+
+    <input type="submit" /> <br />
+</form>

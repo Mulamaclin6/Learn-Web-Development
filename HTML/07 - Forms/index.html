@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HTML Forms </title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend> Personal Information.</legend>
+        <!-- text input -->
+        <label> Username:</label>
+        <input type="text" required name="username"/> <br />
+
+        <!-- email input -->
+        <label> Email:</label>
+        <input type="email" required placeholder="Enter your email" name="email" /> <br />
+        </fieldset>
+
+
+        <fieldset>
+            <legend> Additional Information.</legend>
+        <!-- number input -->
+        <label> Age: </label>
+        <input  type="number" min="18" max="35" name="age" /> <br />
+
+        <!-- password input -->
+        <label>Password</label>
+        <input type="password" required name="password"/> <br />
+
+        <!-- color input -->
+        <label> Favourite color:</label>
+        <input type="color" name="Favourite color"/> <br />
+
+        <!-- date input -->
+        <label> DOB:</label>
+        <input type="date" /> <br />
+
+         <!-- file input -->
+         <label> Upload CV:</label>
+        <input type="file" /> <br />
+
+        <!-- time input -->
+        <label> Arrival time:</label>
+        <input type="time" /> <br />
+
+         <!-- range input -->
+         <label> Range:</label>
+        <input type="range" /> <br />
+
+        <!-- radio button -->
+        <p> Select your gender.</p>
+        <input type="radio" value="male" name="gender" id="male" />
+        <label for="male"> Male</label><br />
+        
+        <input type="radio" value="female" name="gender" id="female" />
+        <label for="female"> Female</label><br />
+        </fieldset>
+
+        <!-- checkbox -->
+        <p> How did you know about us.</p>
+        <input type="checkbox" value="ads" id="ads" />
+        <label for="ads"> Ads.</label><br />
+
+        
+        <input type="checkbox" value="magazine" id="magazine" />
+        <label for="magazine"> Magazine.</label><br />
+        
+        <input type="checkbox" value="friend" id="friend"  />
+        <label for="friend"> Friend.</label><br />
+
+        <input type="checkbox" value="social media" id="social media" />
+        <label for="social media"> Social media</label><br />
+
+         <!-- select element -->
+
+         <label for="language"> Choose your favourite language.</label>
+         <select id="language">
+             <option value="html">Html</option>
+             <option value="css">CSS</option>
+             <option value="js">JS</option>
+             <option value="java">Java</option>
+             <option value="python"selected>Python</option>
+         </select><br />
+ 
+         <!-- text area -->
+         <label> Addition Information:</label>
+         <textarea
+          placeholder="Add some additional comments"
+           rows="10" 
+           cols="30"></textarea>  </textarea><br />
+     </fieldset>
+ 
+ 
+     <!-- datalist element -->
+     <label for="browsers"> What is your favourite browser?</label><br />
+     <input list="browsers" />
+     <datalist id="browsers">
+         <option value="Chrome"></option>
+         <option value="Microsoft edge"></option>
+         <option value="Safari"></option>
+         <option value="Firefox"></option>
+         <option value="Phoenix"></option>
+         <option value="Opera"></option>
+     </datalist><br />
+
+     <label for="cars">Choose your favourite car. </label><br />
+     <input list="car" />
+     <datalist id="car">
+     <select id="car" name="car">
+  <option value="Volvo">Volvo</option>
+  <option value="Saab">Saab</option>
+  <option value="Fiat">Fiat</option>
+  <option value="Audi">Audi</option>
+  <option value="Mercedece benz">Mercedece benz</option>
+</select>
+</datalist><br />
+        
+
+        <!-- submit button -->
+        <input type="submit" value="Sign up" /> <br />
+
+        <!-- disabled -->
+
+    </form>   
+</body>
+</html>
