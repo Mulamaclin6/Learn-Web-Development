@@ -1,0 +1,46 @@
+.container {
+    border: 2px solid black;
+    margin: 2px;
+    padding: 0 20px 20px 20px;
+}
+.first {
+    font-family: arial narrow bold;
+    font-size: large;
+    vertical-align: baseline;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+}
+.second {
+    font-family: serif;
+    font-style: italic;
+    color: green;
+    line-height: 2;
+
+
+}
+.third {
+    font-family: arial italic;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 2px blue;
+
+}
+forth {
+    font-family: "sofia";
+    text-decoration: underline;
+    font-weight: 500;
+    background-color: aqua;
+
+}
+fifth {
+    font-family: italic
+    font-weight: 500;
+    text-align: center;
+    
+
+}
+
+p {
+    height: 50px;
+}

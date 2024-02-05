@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <title>User Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 800px; /* Adjusted max-width for larger screens */
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .top-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .user-details {
+      margin-left: 20px; /* Increased margin for better spacing */
+    }
+
+    .user-image {
+      height: 60px; /* Increased height for better visibility */
+      border-radius: 50%;
+    }
+
+    .username {
+      font-size: 20px; /* Adjusted font size */
+      font-weight: bold;
+      margin-bottom: 5px; /* Adjusted margin */
+    }
+
+    .points-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .earnings-label {
+      font-size: 12px; /* Adjusted font size for earnings labels */
+      display: flex;
+      align-items: center; /* Align items vertically in the earnings labels */
+    }
+
+    .vertical-separator {
+      height: 30px; /* Adjusted height for better visual distinction */
+      width: 1px;
+      background-color: black; /* Separator color */
+      margin: 0 5px; /* Adjusted margin */
+    }
+
+    .survey-container {
+      background-color: #fff;
+      margin-top: 20px;
+      padding: 15px; /* Increased padding for better spacing */
+      border-radius: 5px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Increased box shadow for better visibility */
+      height: 120px; /* Increased height for better visibility */
+      position: relative; /* Added relative positioning for absolute positioning */
+    }
+
+    .survey-image {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      height: 30px;
+      width: 30px;
+    }
+
+    .survey-details {
+      margin-top: 10px;
+      max-width: 60%; /* Adjusted max-width for better text wrapping */
+    }
+
+    .survey-heading {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .survey-subheading {
+      font-size: 12px; /* Reduced font size */
+      color: #555;
+    }
+
+    .horizontal-separator {
+      border-top: 1px solid #ddd;
+      margin-top: 10px;
+    }
+
+    .rating-container {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .star-icon {
+      color: #fdd835; /* Yellow color for stars */
+    }
+
+    .nav-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      background-color:black;
+      color: #fff;
+      justify-content: space-around;
+      padding: 3px; /* Increased padding for better spacing */
+      box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.3); /* Added box shadow for better visibility */
+    }
+
+    .nav-icon {
+      font-size: 28px; /* Increased font size for better visibility */
+    }
+    .survey-container:last-child {
+      margin-bottom: 30px; /* Adjusted margin to create space for the last survey */
+    }
+    .acc-type {
+      font-size: 14px;
+      margin-right: 10px; /* Added margin to create space */
+    }
+
+       /* Style for the popup container */
+       .popup-container {
+      display: none;
+      position: fixed;
+      bottom: 200px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+    }
+
+    .notificationCard {
+  width: 220px;
+  height: 280px;
+  background: rgb(245, 245, 245);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 35px;
+  gap: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.123);
+  border-radius: 20px;
+}
+
+.bellIcon {
+  width: 50px;
+  margin: 20px 0px;
+}
+
+.bellIcon path {
+  fill:black;
+}
+
+.notificationHeading {
+  color: black;
+  font-weight: 600;
+  font-size: 0.8em;
+}
+
+.notificationPara {
+  color: rgb(133, 133, 133);
+  font-size: 0.6em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.AllowBtn {
+  width: 120px;
+  height: 25px;
+  background-color:black;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.7em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.NotnowBtn {
+  width: 120px;
+  height: 25px;
+  color:black;
+  border: none;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 0.7em;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.NotnowBtn:hover {
+  background-color: rgb(239, 227, 255);
+}
+
+.AllowBtn:hover {
+  background-color: #fdd835;
+  color: black;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Top Container -->
+    <div class="top-container">
+      <img src="images/beckham.png" alt="User Image" class="user-image">
+      <div class="user-details">
+        <div class="username">Beckham Ogola</div>
+        <div class="points-container">
+          <div class="earnings-label">
+            <div>Total Points:</div>
+            <div style="font-size: 12px;">1000 points</div>
+          </div>
+          <div class="vertical-separator"></div> <!-- Vertical separator -->
+          <div class="earnings-label">
+            <div>Today's Earnings:</div>
+            <div style="font-size: 12px;">KSH 500</div>
+          </div>
+        </div>
+        <div class="rating-container">
+            <div class="acc-type">Account Type</div>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star"></span>
+          </div>
+      </div>
+    </div>
+
+    <!-- Survey Containers -->
+<h3>Todays Surveys</h3>
+<div style="border-top: 1px solid #ddd; margin-top: 1x;"></div>
+    <a class='survey-link' href='/surveys/free/1' style='text-decoration: none;  color: black;'>
+        <div class="survey-container">
+            <img src="images/clip.png" alt="Survey Image" class="survey-image">
+            <div class="survey-details">
+            <div class="survey-heading">Social Support Programs for the Elderly Survey</div>
+            <div class="survey-subheading">Earn >> Ksh 30</div>
+            <div class="survey-subheading">5 mins of your time!</div>
+            </div>
+            <div class="horizontal-separator"></div>
+            <div class="rating-container">
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star"></span>
+            </div>
+        </div>
+    </a>
+    <a href="#" onclick="showPopupNotification()" style="text-decoration: none;  color: black;">
+        <div class="survey-container">
+                <img src="images/clip.png" alt="Survey Image" class="survey-image">
+                <div class="survey-details">
+                <div class="survey-heading">Schools Survey - Junior Primary</div>
+                <div class="survey-subheading">Earn >> Ksh 50</div>
+                <div class="survey-subheading">5 mins of your time!</div>
+                </div>
+                <div class="horizontal-separator"></div>
+                <div class="rating-container">
+                <span class="fa fa-star star-icon"></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star"></span>
+                </div>
+            </div>
+    </a>
+   
+
+    <a href="#" onclick="showPopupNotification()" style="text-decoration: none;  color: black;">
+        <div class="survey-container">
+        <img src="images/clip.png" alt="Survey Image" class="survey-image">
+        <div class="survey-details">
+            <div class="survey-heading">Schools Survey - Senior Primary</div>
+            <div class="survey-subheading">Earn >> Ksh 100</div>
+            <div class="survey-subheading">5 mins of your time!</div>
+        </div>
+        <div class="horizontal-separator"></div>
+        <div class="rating-container">
+            <span class="fa fa-star star-icon"></span>
+            <span class="fa fa-star star-icon"></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star"></span>
+        </div>
+        </div>
+    </a>
+
+    <a href="#" onclick="showPopupNotification()" style="text-decoration: none;  color: black;">
+        <div class="survey-container">
+        <img src="images/clip.png" alt="Survey Image" class="survey-image">
+        <div class="survey-details">
+            <div class="survey-heading">Schools Survey - Primary</div>
+            <div class="survey-subheading">Earn >> Ksh 150</div>
+            <div class="survey-subheading">5 mins of your time!</div>
+        </div>
+        <div class="horizontal-separator"></div>
+        <div class="rating-container">
+            <span class="fa fa-star star-icon"></span>
+            <span class="fa fa-star star-icon"></span>
+            <span class="fa fa-star star-icon"></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star"></span>
+        </div>
+        </div>
+    </a>
+
+    <a href="#" onclick="showPopupNotification()" style="text-decoration: none;  color: black;">
+        <div class="survey-container">
+        <img src="images/clip.png" alt="Survey Image" class="survey-image">
+        <div class="survey-details">
+            <div class="survey-heading">Schools Survey - Primary</div>
+            <div class="survey-subheading">Earn >> Ksh 200</div>
+            <div class="survey-subheading">5 mins of your time!</div>
+        </div>
+        <div class="horizontal-separator"></div>
+        <div class="rating-container">
+            <span class="fa fa-star star-icon"></span>
+            <span class="fa fa-star star-icon"></span>
+            <span class="fa fa-star star-icon"></span>
+            <span class="fa fa-star star-icon"></span>
+            <span class="fa fa-star"></span>
+        </div>
+        </div>
+    </a>
+
+    <a href="#" onclick="showPopupNotification()" style="text-decoration: none;  color: black;">
+        <div class="survey-container">
+            <img src="images/clip.png" alt="Survey Image" class="survey-image">
+            <div class="survey-details">
+            <div class="survey-heading">Schools Survey - Primary</div>
+            <div class="survey-subheading">Earn >> Ksh 250</div>
+            <div class="survey-subheading">5 mins of your time!</div>
+            </div>
+            <div class="horizontal-separator"></div>
+            <div class="rating-container">
+            <span class="fa fa-star star-icon"></span>
+            <span class="fa fa-star star-icon"></span>
+            <span class="fa fa-star star-icon"></span>
+            <span class="fa fa-star star-icon"></span>
+            <span class="fa fa-star star-icon"></span>
+            </div>
+        </div>
+    </a>
+  </div>
+
+
+  <!-- Popup Container -->
+  <div id="popup" class="popup-container">
+    <div class="notificationCard">
+        <p class="notificationHeading">PLEASE UPGRADE <BR></BR>YOUR ACCOUNT</p>
+        <svg class="bellIcon" viewBox="0 0 448 512"><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"></path></svg>
+        <p class="notificationPara">You Are Not Eligible For This Survey</p>
+        <div class="buttonContainer">
+        <a href='/accountupgrade'><button class="AllowBtn">Upgrade Account</button></a>
+        </div>
+  </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="nav-bar">
+    <a href='/home' style='color: white;'><div class="nav-icon"><i style="font-size:20px" class="fa fa-home"></i></div></a>
+    <a href="" style="color: white;"><div class="nav-icon"><i style="font-size:20px" class="fa">&#xf09d;</i></div></a>
+    <a href="" style="color: white;"><div class="nav-icon"><i style="font-size:24px" class="fa">&#xf15a;</i></div></a>
+    <a href="" style="color: white;"><div class="nav-icon"><i style="font-size:24px" class="fa">&#xf0c9;</i></div></a>
+  </div>
+</body>
+
+<script>
+    function showPopupNotification() {
+      // Show the popup container
+      var popup = document.getElementById('popup');
+      popup.style.display = 'block';
+
+      // Hide the popup after 3 seconds (adjust the time as needed)
+      setTimeout(function() {
+        popup.style.display = 'none';
+      }, 5000);
+    }
+  </script>
+</html>
