@@ -1,0 +1,41 @@
+.container {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  position: relative;
+  animation-name: colors;
+  animation-duration: 5s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: cubic-bezier(0.36, -0.33, 0.71, 1.41);
+  animation-fill-mode: backwards;
+  /*animation: colors 5s 2s infinite alternate-reverse ease backwards; */
+}
+@keyframes colors {
+  0% {
+    background-color: blue;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background-color: aqua;
+    left: 200px;
+    top: 0%;
+  }
+  50% {
+    background-color: red;
+    left: 0px;
+    top: 200px;
+  }
+  75% {
+    background-color: green;
+    left: 100px;
+    top: 200px;
+  }
+  100% {
+    background-color: yellow;
+    left: 0px;
+    top: 0px;
+  }
+}

@@ -1,0 +1,57 @@
+/*
+.static {
+    position: static;
+    border: 2px solid burlywood;
+}
+
+.relative {
+    position: relative;
+    border: 2px solid #ff76ff;
+    top: 50px;
+    left: 15px;
+}
+
+.fixed {
+    position: fixed;
+    border: 2px solid red;
+    top: 0;
+    right: 0;
+}
+
+.outer {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px solid blue; 
+}
+
+.absolute {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    height: 50px;
+    border: 2px solid green;   
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    border: 2px solid purple;
+} */
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+p {
+    color: blue;
+    position: relative;
+    font-size: large;
+    margin-top: 500px;
+    z-index: 2;
+
+}
+

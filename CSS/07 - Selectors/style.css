@@ -1,0 +1,67 @@
+/* syntax */
+Selector {
+    property: value;
+}
+body {
+    background-color: aquamarine;
+}
+
+div > p{
+    color: rgb(0, 255, 0)
+}
+
+div > section {
+    background-color: yellow;
+}
+div h2{
+    color: hsl(240, 100%, 50%)
+}
+
+span + strong {
+    color: pink;
+}
+
+p ~ h4 {
+    color: red;
+}
+
+a[target] {
+    text-decoration: none;
+
+}
+
+a[target="_blank"] {
+    color: gold;
+}
+/* unvisited state */
+a:link{
+    color: red;
+}
+
+/* visited state */
+a:visited{
+    color: rgb(0, 255, 0)
+}
+
+/* mouse over state */
+a:hovor {
+    color:blueviolet;
+}
+
+/* active state */
+a:active {
+    color: blue;
+}
+
+p::first-line {
+    color: yellow;
+}
+
+p::before {
+    content: "Added Text";
+}
+
+::marker {
+    color: purple;
+    font-size: x-large;
+}

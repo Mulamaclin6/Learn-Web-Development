@@ -1,0 +1,24 @@
+/*html {
+  font-size: 12px;
+}*/
+
+p {
+  font-size: 1.67rem;
+}
+.container {
+  height: 50vp;
+  width: 50vp;
+  background-color: blue;
+}
+
+.test {
+  height: 100%;
+  width: 50vp;
+  background-color: blue;
+}
+
+ul,
+li {
+  margin: 20px;
+  display: inline;
+}

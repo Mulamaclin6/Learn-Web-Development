@@ -1,0 +1,33 @@
+.container {
+    height: 500px;
+    background-color: blue;
+}
+
+@media (min-width: 500px) {
+    .container {
+        background-color: red;
+    }
+}
+
+@media (min-width: 800px) {
+    .container {
+        background-color: green;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        background-color: yellow;
+    }
+}
+
+@media all and (min-width: ){
+
+}
+
+
+@media screen and (orientation: landscape;) {
+    background-color: rgb
+} 
+
+@media print

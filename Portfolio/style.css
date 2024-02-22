@@ -1,0 +1,66 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.profile {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.about {
+  width: 25%;
+  height: 500px;
+  margin: 20px;
+  padding: 8px;
+  border-radius: 2px;
+  text-align: justify;
+  font-size: large;
+  background-color: antiquewhite;
+  margin: 20px;
+}
+
+h2 {
+  color: #333;
+}
+
+h3 {
+  color: #555;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.project,
+.job {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+#contact {
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+/* Add additional styling as needed */
